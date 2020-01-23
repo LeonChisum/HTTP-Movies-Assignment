@@ -61,6 +61,18 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
+
+.edit-button {
+  position: absolute;
+  top: 75px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  letter-spacing: .1rem;
+  background-color: orangered;
+  color: white;
+}
+
 .save-button:hover {
   background-color: green;
   color: white;
@@ -74,4 +86,13 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+.update-form{
+  width: 75%;
+  margin: 1rem auto;
+  padding: 1 rem;
+}
+#submit{
+  background-color: orangered;
+  color: white;
 }
