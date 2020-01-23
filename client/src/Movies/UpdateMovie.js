@@ -8,7 +8,7 @@ export default function UpdateMovie(props) {
        id: null,
        title: '',
        director: '',
-       metascore: null,
+       metascore: 0,
        stars: []
 
     })
@@ -29,6 +29,10 @@ export default function UpdateMovie(props) {
             ...movie,
             [e.target.name] : e.target.value
         })
+    }
+
+    const handleStarsChange = (e, index) => {
+        movie.stars[index] = e.target.value
     }
 
     const handleSubmit = (e) => {
@@ -62,12 +66,16 @@ export default function UpdateMovie(props) {
               onChange={handleChange}
             />
             <Label>Stars</Label>
-            <Form.Input
+            {movie.stars.map((star, index) => {
+               return <Form.Input
+              key={index}
               placeholder='Stars'
               name='stars'
-              value={movie.stars}
-              onChange={handleChange}
+              value={star}
+              onChange={handleStarsChange(index)}
             />
+            })}
+            
             <Form.Button content='Update' id='submit'/>
           </Form.Group>
         </Form>
